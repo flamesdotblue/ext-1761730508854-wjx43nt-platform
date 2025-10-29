@@ -1,28 +1,39 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import About from './components/About';
+import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-black text-white font-inter">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <a href="#" className="text-xl font-semibold tracking-wide">Ava Collins</a>
+          <nav className="hidden md:flex items-center gap-8 text-sm">
+            <a href="#about" className="hover:text-white/80 transition">About</a>
+            <a href="#portfolio" className="hover:text-white/80 transition">Portfolio</a>
+            <a href="#contact" className="hover:text-white/80 transition">Contact</a>
+          </nav>
+          <a href="#contact" className="ml-4 inline-flex items-center px-4 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-white/90 transition">
+            Book Me
+          </a>
         </div>
-      </div>
-    </div>
-  )
-}
+      </header>
 
-export default App
+      <main>
+        <Hero />
+        <About />
+        <Portfolio />
+        <Contact />
+      </main>
+
+      <footer className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p>© {new Date().getFullYear()} Ava Collins. All rights reserved.</p>
+          <p>Based in NYC • Available for travel</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
