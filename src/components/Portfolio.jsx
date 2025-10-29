@@ -1,64 +1,60 @@
 import React from 'react';
 
-const items = [
+const images = [
   {
-    src: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1400&auto=format&fit=crop',
-    title: 'Editorial Series',
-    tag: 'Editorial',
+    src: 'https://images.unsplash.com/photo-1547683905-f686c993aae5?q=80&w=1600&auto=format&fit=crop',
+    alt: 'Editorial studio set in cool tones',
   },
   {
-    src: 'https://images.unsplash.com/photo-1502164980785-f8aa41d53611?q=80&w=1400&auto=format&fit=crop',
-    title: 'Runway Highlights',
-    tag: 'Runway',
+    src: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=1600&auto=format&fit=crop',
+    alt: 'Runway look with structured silhouette',
   },
   {
-    src: 'https://images.unsplash.com/photo-1516594798947-e65505dbb29d?q=80&w=1400&auto=format&fit=crop',
-    title: 'Beauty Close-up',
-    tag: 'Beauty',
+    src: 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=1600&auto=format&fit=crop',
+    alt: 'Beauty campaign in soft light',
   },
   {
-    src: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400&auto=format&fit=crop',
-    title: 'Commercial',
-    tag: 'Commercial',
+    src: 'https://images.unsplash.com/photo-1496440737103-cd596325d314?q=80&w=1600&auto=format&fit=crop',
+    alt: 'Outdoor fashion editorial',
   },
   {
-    src: 'https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?q=80&w=1400&auto=format&fit=crop',
-    title: 'Studio Light',
-    tag: 'Studio',
+    src: 'https://images.unsplash.com/photo-1516570161787-2fd917215a3d?q=80&w=1600&auto=format&fit=crop',
+    alt: 'Minimal monochrome fashion set',
   },
   {
-    src: 'https://images.unsplash.com/photo-1520975922291-569dc06c8d0e?q=80&w=1400&auto=format&fit=crop',
-    title: 'Lifestyle',
-    tag: 'Lifestyle',
+    src: 'https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?q=80&w=1600&auto=format&fit=crop',
+    alt: 'Street style campaign',
   },
 ];
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="relative py-20 bg-[radial-gradient(1200px_600px_at_50%_-100px,rgba(255,255,255,0.12),transparent)]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-end justify-between mb-8">
+    <div className="relative py-20 bg-gradient-to-b from-black to-zinc-950">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold">Portfolio</h2>
-            <p className="text-white/70 mt-2">A selection of fashion, editorial, and commercial work.</p>
+            <h2 className="text-3xl sm:text-4xl font-semibold">Portfolio</h2>
+            <p className="mt-2 text-zinc-300">A selection of campaigns, editorials, and runway moments.</p>
           </div>
-          <a href="#contact" className="hidden md:inline-flex items-center px-4 py-2 rounded-full border border-white/20 hover:border-white/40 text-sm">Request Lookbook</a>
+          <a href="#contact" className="hidden sm:inline-flex px-4 py-2 rounded-md border border-white/15 text-sm hover:bg-white/10 transition">Book a shoot</a>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {items.map((item, idx) => (
-            <figure key={idx} className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5">
-              <img src={item.src} alt={item.title} className="h-64 w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
-              <figcaption className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
-                <div className="flex items-center gap-2 text-xs text-white/80">
-                  <span className="inline-flex px-2 py-0.5 rounded-full bg-white/10 border border-white/15">{item.tag}</span>
-                </div>
-                <div className="mt-2 text-base font-medium">{item.title}</div>
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {images.map((img, i) => (
+            <figure key={i} className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/5">
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 p-3 text-xs text-zinc-200 bg-gradient-to-t from-black/70 to-transparent">
+                {img.alt}
               </figcaption>
             </figure>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

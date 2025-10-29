@@ -7,31 +7,27 @@ import Contact from './components/Contact';
 export default function App() {
   return (
     <div className="min-h-screen bg-black text-white font-inter">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#" className="text-xl font-semibold tracking-wide">Ava Collins</a>
-          <nav className="hidden md:flex items-center gap-8 text-sm">
-            <a href="#about" className="hover:text-white/80 transition">About</a>
-            <a href="#portfolio" className="hover:text-white/80 transition">Portfolio</a>
-            <a href="#contact" className="hover:text-white/80 transition">Contact</a>
+      <header className="fixed top-0 left-0 right-0 z-30 backdrop-blur-md/0 bg-black/20 supports-[backdrop-filter]:backdrop-blur-md">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+          <a href="#home" className="text-lg font-semibold tracking-tight">Ava Carter</a>
+          <nav className="hidden sm:flex items-center gap-6 text-sm">
+            <a href="#about" className="hover:text-zinc-300">About</a>
+            <a href="#portfolio" className="hover:text-zinc-300">Portfolio</a>
+            <a href="#contact" className="hover:text-zinc-300">Contact</a>
           </nav>
-          <a href="#contact" className="ml-4 inline-flex items-center px-4 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-white/90 transition">
-            Book Me
-          </a>
         </div>
       </header>
 
       <main>
-        <Hero />
-        <About />
-        <Portfolio />
-        <Contact />
+        <section id="home"><Hero /></section>
+        <section id="about"><About /></section>
+        <section id="portfolio"><Portfolio /></section>
+        <section id="contact"><Contact /></section>
       </main>
 
       <footer className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} Ava Collins. All rights reserved.</p>
-          <p>Based in NYC • Available for travel</p>
+        <div className="max-w-6xl mx-auto px-4 py-8 text-xs text-zinc-400">
+          © {new Date().getFullYear()} Ava Carter — All rights reserved.
         </div>
       </footer>
     </div>
